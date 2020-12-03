@@ -204,14 +204,16 @@ $if(author)$
 $endif$
 $endif$
 
-$if(date)$
-\date{$date$}
-$endif$
+\date{}
 
 $for(header-includes)$
 $header-includes$
 $endfor$
-\address{$for(return-address)$$return-address$$sep$\\$endfor$}
+
+\address{\begin{tabular}{r@{}}%
+    $for(return-address)$$return-address$$sep$\\$endfor$
+    \end{tabular}%  
+    }
 
 $if(plainquote)$
 % nuttin, defaults are used
@@ -233,6 +235,8 @@ $if(letterfoot)$
 \usepackage{wallpaper}
 \ThisL$if(letterfoot-side)$$letterfoot-side$$else$L$endif$CornerWallPaper{$if(letterfoot-scale)$$letterfoot-scale$$else$1$endif$}{$letterfoot$}
 $endif$
+
+\vspace{-1.5em}
 
 \begin{document}
 
