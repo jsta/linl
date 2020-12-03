@@ -210,10 +210,12 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+$if(return-address)$
 \address{\begin{tabular}{r@{}}%
     $for(return-address)$$return-address$$sep$\\$endfor$
     \end{tabular}%  
     }
+$endif$
 
 $if(plainquote)$
 % nuttin, defaults are used
